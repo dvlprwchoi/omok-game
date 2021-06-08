@@ -14,6 +14,9 @@ body {
     font-weight: bold;
     margin-bottom: 51.440px;
 }
+.gameTitle span {
+    color: ivory;
+}
 .gameBoardGridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -25,4 +28,8 @@ body {
     width: 100px;
     background-color: gold;
     border-radius: 10%;
+}
+.white {
+    border-radius: 50%;
+    background-color: ivory;
 }
