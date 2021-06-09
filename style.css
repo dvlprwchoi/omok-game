@@ -28,8 +28,13 @@ body {
     width: 100px;
     background-color: gold;
     border-radius: 10%;
+    /* text-indent: -9999px; */
 }
 .white {
     border-radius: 50%;
     background-color: ivory;
+}
+.black {
+    border-radius: 50%;
+    background-color: black;
 }
