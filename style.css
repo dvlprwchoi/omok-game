@@ -23,6 +23,24 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
 }
+.statusBarContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+.gameStatusMessage {
+    font-size: 25px;
+    text-align: start;
+}
+.resetButton {
+   color: ivory;
+   font-size: 25px;
+   text-align: end; 
+}
+.resetButton:hover {
+    color: red;
+}
 .cellGrid {
     height: 100px;
     width: 100px;

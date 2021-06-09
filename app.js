@@ -2,6 +2,8 @@
 
 // Variables
 const allCellGrids = document.querySelectorAll(".cellGrid");
+const gameStatusMessage = document.querySelector(".gameStatusMessage");
+const resetButton = document.querySelector(".resetButton");
 // const cell25 = allCellGrids[24];
 // console.log(allCellGrids);
 // console.log(allCellGrids[0]);
@@ -23,7 +25,7 @@ let gameStatus = true;
 
 let winner = null;
 
-// Handler function
+// Mark handler function
 const mark = (event) => {
     // console.log(event.target.classList[1]);
     if (!gameStatus || event.target.classList[2] === "black" || event.target.classList[2] === "white") {
@@ -41,6 +43,19 @@ const mark = (event) => {
         whiteStoneNext = !whiteStoneNext;
     }
 }
+// Reset handler function
+const resetGame = () => {
+    for (const cellGrid of allCellGrids) {
+        cellGrid.classList.remove("black");
+        cellGrid.classList.remove("white");    
+        // console.log(cellGrid)
+    }
+    gameStatus = true;
+    whiteStoneNext = true;
+}
+
+
+
 
 // const r1c1 = document.querySelector(".r1c1");
 // const r1c1a = document.getElementsByClassName("r1c1");
@@ -141,4 +156,5 @@ const win = () => {
 for (const cellGrid of allCellGrids) {
     cellGrid.addEventListener("click", mark);
 }
+resetButton.addEventListener("click", resetGame);
 // cell25.addEventListener("click", mark);
