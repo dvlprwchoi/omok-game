@@ -10,18 +10,28 @@ body {
 }
 .gameTitle {
     text-align: center;
-    color: black;
+    color: ivory;
+    font-size: 50px;
     font-weight: bold;
     margin-bottom: 51.440px;
 }
 .gameTitle span {
-    color: ivory;
+    color: black;
 }
 .gameBoardGridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
+    animation: spin 1000ms ease-in-out 1;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 .statusBarContainer {
     display: grid;
@@ -39,20 +49,42 @@ body {
    text-align: end; 
 }
 .resetButton:hover {
-    color: red;
+    color: orangered;
+    font-size: 30px;
+    transition: color 1500ms, font-size 1500ms;
 }
 .cellGrid {
     height: 100px;
     width: 100px;
     background-color: gold;
+    opacity: 1;
     border-radius: 10%;
-    /* text-indent: -9999px; */
+    text-indent: -9999px;
 }
 .white {
     border-radius: 50%;
     background-color: ivory;
+    transition: background 500ms;
 }
 .black {
     border-radius: 50%;
     background-color: black;
+    transition: background 500ms;
+}
+.won {
+   animation: changingColor 900ms infinite;
+}
+@keyframes changingColor {
+    0% {
+        background-color: orangered;
+    } 
+    25% {
+        background-color: ivory;
+    }
+    50% {
+        background-color: orangered;
+    }
+    100% {
+        background-color: black;
+    }
 }
