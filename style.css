@@ -1,22 +1,22 @@
 body {
-    background-color: gray;
+    background-color: #E6E6E6;
     display: flex;
     justify-content: center;
 }
 .gameContainer {
-    background-color: green;
+    background-color: #808080;
     margin: 30px;
     padding: 50px;
 }
 .gameTitle {
     text-align: center;
-    color: ivory;
+    color: #ffffef;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 51.440px;
 }
 .gameTitle span {
-    color: black;
+    color: #201D1D;
 }
 .gameBoardGridContainer {
     display: grid;
@@ -44,7 +44,7 @@ body {
     text-align: start;
 }
 .resetButton {
-   color: ivory;
+   color: #ffffef;
    font-size: 25px;
    text-align: end; 
 }
@@ -56,35 +56,36 @@ body {
 .cellGrid {
     height: 100px;
     width: 100px;
-    background-color: gold;
+    background-color: #FFE561;
     opacity: 1;
     border-radius: 10%;
     text-indent: -9999px;
 }
 .white {
     border-radius: 50%;
-    background-color: ivory;
+    background-color: #ffffef;
     transition: background 500ms;
 }
 .black {
     border-radius: 50%;
-    background-color: black;
+    background-color: #201D1D;
     transition: background 500ms;
 }
 .won {
-   animation: changingColor 900ms infinite;
+   animation: changingColor 1800ms infinite;
+   animation-timing-function: linear;
 }
 @keyframes changingColor {
     0% {
         background-color: orangered;
     } 
-    25% {
-        background-color: ivory;
+    16% {
+        background-color: #ffffef;
     }
-    50% {
+    49% {
+        background-color: #201D1D;
+    }
+    82% {
         background-color: orangered;
-    }
-    100% {
-        background-color: black;
     }
 }
