@@ -2,6 +2,8 @@
 const allCellGrids = document.querySelectorAll(".cellGrid");
 const gameStatusMessage = document.querySelector(".gameStatusMessage");
 const resetButton = document.querySelector(".resetButton");
+const modal = document.querySelector(".modal");
+const modalCloseButton = document.querySelector(".modalCloseButton");
 
 // Is next stone color white?
 // (current stone color is black)
@@ -46,6 +48,10 @@ const resetGame = () => {
     whiteStoneNext = true;
     winner = null;
     gameStatusMessage.innerText = "";
+}
+// Close modal function
+const closeModal = () => {
+    modal.style.display = "none";
 }
 
 // Win Logic Function
@@ -183,3 +189,4 @@ for (const cellGrid of allCellGrids) {
     cellGrid.addEventListener("click", mark);
 }
 resetButton.addEventListener("click", resetGame);
+modalCloseButton.addEventListener("click", closeModal);
