@@ -7,11 +7,14 @@ body {
     justify-content: center;
 }
 .gameContainer {
+    display: flex;
+    align-items: flex-start;
     background-color: #808080;
     margin: 30px;
     padding: 50px;
 }
 .gameTitle {
+    /* align-items: flex-start; */
     text-align: center;
     color: #ffffef;
     font-size: 50px;
@@ -23,6 +26,7 @@ body {
 }
 .modal {
     display: block;
+    /* align-items: center; */
     position: fixed;
     z-index: 1;
     background-color: #E6E6E6;
