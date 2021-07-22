@@ -125,3 +125,31 @@ body {
         background-color: orangered;
     }
 }
+@media (max-width: 414px) {
+    .gameContainer {
+        max-width: 330px;
+        max-height: 667px;
+    }
+    .gameBoardGridContainer {
+        max-width: 300px;
+    }
+    .cellGrid {
+        width: 50px;
+        height: 50px;
+    }
+    .modal {
+        max-width: 300px;
+        max-height: 500px;
+    }
+    .modal h1 {
+        font-size: 25px;
+    }
+    .modal p {
+        font-size: 15px;
+    }
+    .modalCloseButton {
+        color: orangered;
+        text-align: center;
+        font-size: 25px;
+    }    
+}
