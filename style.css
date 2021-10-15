@@ -1,162 +1,187 @@
 * {
-    font-family: 'Baloo Tammudu 2', cursive;
+  font-family: 'Baloo Tammudu 2', cursive;
 }
 body {
-    background-color: #E6E6E6;
-    display: flex;
-    justify-content: center;
+  background-color: #e6e6e6;
+  display: flex;
+  justify-content: center;
 }
 .gameContainer {
-    background-color: #808080;
-    margin: 30px;
-    padding: 50px;
+  background-color: #808080;
+  margin: 30px;
+  padding: 50px;
 }
 .gameTitle {
-    text-align: center;
-    color: #ffffef;
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 51.440px;
+  text-align: center;
+  color: #ffffef;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 51.44px;
 }
 .gameTitle span {
-    color: #201D1D;
+  color: #201d1d;
 }
 .modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    background-color: #E6E6E6;
-    opacity: 0.9;
-    border: 10px solid #201D1D;
-    border-radius: 5%;
-    padding: 50px;
-    margin: 30px;
-    top: 0;
-    left: 0;
+  display: block;
+  position: fixed;
+  z-index: 1;
+  background-color: #e6e6e6;
+  opacity: 0.9;
+  border: 10px solid #201d1d;
+  border-radius: 5%;
+  padding: 50px;
+  margin: 30px;
+  top: 0;
+  left: 0;
 }
-.modal h1, p {
-    color: #201D1D;
-    text-align: center;
+.modal h1,
+p {
+  color: #201d1d;
+  text-align: center;
 }
 .modal h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 .modal p {
-    font-size: 30px;
+  font-size: 30px;
 }
 .modalCloseButton {
-    color: orangered;
-    text-align: center;
-    font-size: 50px;
+  color: orangered;
+  text-align: center;
+  font-size: 50px;
 }
 .modalCloseButton:hover {
-    font-weight: bold;
-    cursor: pointer;
+  font-weight: bold;
+  cursor: pointer;
 }
 .gameBoardGridContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-    animation: spin 1000ms ease-in-out 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  animation: spin 1000ms ease-in-out 1;
 }
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .statusBarContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
 }
 .gameStatusMessage {
-    font-size: 25px;
-    text-align: start;
+  font-size: 25px;
+  text-align: start;
 }
 .resetButton {
-   color: #ffffef;
-   font-size: 25px;
-   text-align: end;
-   cursor: pointer; 
+  color: #ffffef;
+  font-size: 25px;
+  text-align: end;
+  cursor: pointer;
 }
 .resetButton:hover {
-    color: orangered;
-    font-weight: bold;
-    transition: color 1500ms, font-size 1500ms;
+  color: orangered;
+  font-weight: bold;
+  transition: color 1500ms, font-size 1500ms;
 }
 .cellGrid {
-    height: 100px;
-    width: 100px;
-    background-color: #FFE561;
-    opacity: 1;
-    border-radius: 10%;
-    text-indent: -9999px;
+  height: 100px;
+  width: 100px;
+  background-color: #ffe561;
+  opacity: 1;
+  border-radius: 10%;
+  text-indent: -9999px;
 }
 .white {
-    border-radius: 50%;
-    background-color: #ffffef;
-    transition: background 500ms;
+  border-radius: 50%;
+  background-color: #ffffef;
+  transition: background 500ms;
 }
 .black {
-    border-radius: 50%;
-    background-color: #201D1D;
-    transition: background 500ms;
+  border-radius: 50%;
+  background-color: #201d1d;
+  transition: background 500ms;
 }
 .won {
-   animation: changingColor 1800ms infinite;
-   animation-timing-function: linear;
+  animation: changingColor 1800ms infinite;
+  animation-timing-function: linear;
 }
 @keyframes changingColor {
-    0% {
-        background-color: orangered;
-    } 
-    16% {
-        background-color: #ffffef;
-    }
-    49% {
-        background-color: #201D1D;
-    }
-    82% {
-        background-color: orangered;
-    }
+  0% {
+    background-color: orangered;
+  }
+  16% {
+    background-color: #ffffef;
+  }
+  49% {
+    background-color: #201d1d;
+  }
+  82% {
+    background-color: orangered;
+  }
 }
 @media (max-width: 414px) {
-    .gameTitle {
-        font-size: 25px;
-        margin-bottom: 25px;
-    }
-    .gameContainer {
-        max-width: 330px;
-        max-height: 667px;
-    }
-    .gameBoardGridContainer {
-        max-width: 300px;
-    }
-    .cellGrid {
-        width: 50px;
-        height: 50px;
-    }
-    .resetButton, .gameStatusMessage {
-        font-size: 15px;
-    }
-    .modal {
-        max-width: 300px;
-        max-height: 500px;
-    }
-    .modal h1 {
-        font-size: 25px;
-    }
-    .modal p {
-        font-size: 15px;
-    }
-    .modalCloseButton {
-        color: orangered;
-        text-align: center;
-        font-size: 25px;
-    }    
+  .gameTitle {
+    font-size: 25px;
+    margin-bottom: 25px;
+  }
+  .gameContainer {
+    max-width: 330px;
+    max-height: 667px;
+  }
+  .gameBoardGridContainer {
+    max-width: 300px;
+  }
+  .cellGrid {
+    width: 50px;
+    height: 50px;
+  }
+  .resetButton,
+  .gameStatusMessage {
+    font-size: 15px;
+  }
+  .modal {
+    max-width: 300px;
+    max-height: 500px;
+  }
+  .modal h1 {
+    font-size: 25px;
+  }
+  .modal p {
+    font-size: 15px;
+  }
+  .modalCloseButton {
+    color: orangered;
+    text-align: center;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 800px) {
+  .modal {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .modal h1 {
+    flex: 5;
+    align-self: flex-start;
+  }
+  .modal p {
+    flex: 2;
+    align-self: center;
+  }
+  .modal .modalCloseButton {
+    flex: 3;
+    align-self: flex-end;
+  }
 }
