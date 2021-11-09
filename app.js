@@ -1,9 +1,9 @@
 // Variables
-const allCellGrids = document.querySelectorAll(".cellGrid");
-const gameStatusMessage = document.querySelector(".gameStatusMessage");
-const resetButton = document.querySelector(".resetButton");
-const modal = document.querySelector(".modal");
-const modalCloseButton = document.querySelector(".modalCloseButton");
+const allCellGrids = document.querySelectorAll('.cellGrid');
+const gameStatusMessage = document.querySelector('.gameStatusMessage');
+const resetButton = document.querySelector('.resetButton');
+const modal = document.querySelector('.modal');
+const modalCloseButton = document.querySelector('.modalCloseButton');
 
 // Is next stone color white?
 // (current stone color is black)
@@ -19,174 +19,278 @@ let winner = null;
 
 // Mark handler function
 const mark = (event) => {
-    // console.log(event.target.classList[1]);
-    if (!gameStatus || event.target.classList[2] === "black" || event.target.classList[2] === "white") {
-        return;
-    }
-    if (whiteStoneNext) {
-        event.target.classList.add("black");
-        // event.target.innerText = "black";
-        winLogic();
-        whiteStoneNext = !whiteStoneNext;
-    } else {
-        event.target.classList.add("white");
-        // event.target.innerText = "white"
-        winLogic();
-        whiteStoneNext = !whiteStoneNext;
-    }
-}
+  // console.log(event.target.classList[1]);
+  if (
+    !gameStatus ||
+    event.target.classList[2] === 'black' ||
+    event.target.classList[2] === 'white'
+  ) {
+    return;
+  }
+  if (whiteStoneNext) {
+    event.target.classList.add('black');
+    // event.target.innerText = "black";
+    winLogic();
+    whiteStoneNext = !whiteStoneNext;
+  } else {
+    event.target.classList.add('white');
+    // event.target.innerText = "white"
+    winLogic();
+    whiteStoneNext = !whiteStoneNext;
+  }
+};
 
 // Reset handler function
 const resetGame = () => {
-    for (const cellGrid of allCellGrids) {
-        cellGrid.classList.remove("black");
-        cellGrid.classList.remove("white");
-        cellGrid.classList.remove("won");    
-        // console.log(cellGrid)
-    }
-    gameStatus = true;
-    whiteStoneNext = true;
-    winner = null;
-    gameStatusMessage.innerText = "";
-}
+  for (const cellGrid of allCellGrids) {
+    cellGrid.classList.remove('black');
+    cellGrid.classList.remove('white');
+    cellGrid.classList.remove('won');
+    // console.log(cellGrid)
+  }
+  gameStatus = true;
+  whiteStoneNext = true;
+  winner = null;
+  gameStatusMessage.innerText = '';
+};
 // Close modal function
 const closeModal = () => {
-    modal.style.display = "none";
-}
+  modal.style.display = 'none';
+};
 
 // Win Logic Function
 const winLogic = () => {
-    const r1c1 = allCellGrids[0].classList[2];
-    const r1c2 = allCellGrids[1].classList[2];
-    const r1c3 = allCellGrids[2].classList[2];
-    const r1c4 = allCellGrids[3].classList[2];
-    const r1c5 = allCellGrids[4].classList[2];
-    const r2c1 = allCellGrids[5].classList[2];
-    const r2c2 = allCellGrids[6].classList[2];
-    const r2c3 = allCellGrids[7].classList[2];
-    const r2c4 = allCellGrids[8].classList[2];
-    const r2c5 = allCellGrids[9].classList[2];
-    const r3c1 = allCellGrids[10].classList[2];
-    const r3c2 = allCellGrids[11].classList[2];
-    const r3c3 = allCellGrids[12].classList[2];
-    const r3c4 = allCellGrids[13].classList[2];
-    const r3c5 = allCellGrids[14].classList[2];
-    const r4c1 = allCellGrids[15].classList[2];
-    const r4c2 = allCellGrids[16].classList[2];
-    const r4c3 = allCellGrids[17].classList[2];
-    const r4c4 = allCellGrids[18].classList[2];
-    const r4c5 = allCellGrids[19].classList[2];
-    const r5c1 = allCellGrids[20].classList[2];
-    const r5c2 = allCellGrids[21].classList[2];
-    const r5c3 = allCellGrids[22].classList[2];
-    const r5c4 = allCellGrids[23].classList[2];
-    const r5c5 = allCellGrids[24].classList[2];
-    
-    // console.log(r1c1, r1c2, r1c3, r1c4, r1c5, r2c1, r2c2, r2c3, r2c4, r2c5, r3c1, r3c2, r3c3, r3c4, r3c5, r4c1, r4c2, r4c3, r4c4, r4c5, r5c1, r5c2, r5c3, r5c4, r5c5);
+  const r1c1 = allCellGrids[0].classList[2];
+  const r1c2 = allCellGrids[1].classList[2];
+  const r1c3 = allCellGrids[2].classList[2];
+  const r1c4 = allCellGrids[3].classList[2];
+  const r1c5 = allCellGrids[4].classList[2];
+  const r2c1 = allCellGrids[5].classList[2];
+  const r2c2 = allCellGrids[6].classList[2];
+  const r2c3 = allCellGrids[7].classList[2];
+  const r2c4 = allCellGrids[8].classList[2];
+  const r2c5 = allCellGrids[9].classList[2];
+  const r3c1 = allCellGrids[10].classList[2];
+  const r3c2 = allCellGrids[11].classList[2];
+  const r3c3 = allCellGrids[12].classList[2];
+  const r3c4 = allCellGrids[13].classList[2];
+  const r3c5 = allCellGrids[14].classList[2];
+  const r4c1 = allCellGrids[15].classList[2];
+  const r4c2 = allCellGrids[16].classList[2];
+  const r4c3 = allCellGrids[17].classList[2];
+  const r4c4 = allCellGrids[18].classList[2];
+  const r4c5 = allCellGrids[19].classList[2];
+  const r5c1 = allCellGrids[20].classList[2];
+  const r5c2 = allCellGrids[21].classList[2];
+  const r5c3 = allCellGrids[22].classList[2];
+  const r5c4 = allCellGrids[23].classList[2];
+  const r5c5 = allCellGrids[24].classList[2];
 
-    // console.log(allCellGrids[19]);
-    // console.log(r1c4, r2c4, r3c4, r4c4, r5c4);
+  // console.log(r1c1, r1c2, r1c3, r1c4, r1c5, r2c1, r2c2, r2c3, r2c4, r2c5, r3c1, r3c2, r3c3, r3c4, r3c5, r4c1, r4c2, r4c3, r4c4, r4c5, r5c1, r5c2, r5c3, r5c4, r5c5);
 
-    // Winner statement function
-    const winnerFunction = (winner) => {
-        gameStatus = false;
-        console.log(winner);
-        gameStatusMessage.innerText = `${winner} has won!!!`
-    }
-    if (r1c1 && r1c1 === r1c2 && r1c1 === r1c3 && r1c1 === r1c4 && r1c1 === r1c5) {
-        allCellGrids[0].classList.add("won");
-        allCellGrids[1].classList.add("won");
-        allCellGrids[2].classList.add("won");
-        allCellGrids[3].classList.add("won");
-        allCellGrids[4].classList.add("won");
-        winnerFunction (r1c1);
-    } else if (r2c1 && r2c1 === r2c2 && r2c1 === r2c3 && r2c1 === r2c4 && r2c1 === r2c5) {
-        allCellGrids[5].classList.add("won");
-        allCellGrids[6].classList.add("won");
-        allCellGrids[7].classList.add("won");
-        allCellGrids[8].classList.add("won");
-        allCellGrids[9].classList.add("won");
-        winnerFunction (r2c1);
-    } else if (r3c1 && r3c1 === r3c2 && r3c1 === r3c3 && r3c1 === r3c4 && r3c1 === r3c5) {
-        allCellGrids[10].classList.add("won");
-        allCellGrids[11].classList.add("won");
-        allCellGrids[12].classList.add("won");
-        allCellGrids[13].classList.add("won");
-        allCellGrids[14].classList.add("won");
-        winnerFunction (r3c1);
-    } else if (r4c1 && r4c1 === r4c2 && r4c1 === r4c3 && r4c1 === r4c4 && r4c1 === r4c5) {
-        allCellGrids[15].classList.add("won");
-        allCellGrids[16].classList.add("won");
-        allCellGrids[17].classList.add("won");
-        allCellGrids[18].classList.add("won");
-        allCellGrids[19].classList.add("won");
-        winnerFunction (r4c1);
-    } else if (r5c1 && r5c1 === r5c2 && r5c1 === r5c3 && r5c1 === r5c4 && r5c1 === r5c5) {
-        allCellGrids[20].classList.add("won");
-        allCellGrids[21].classList.add("won");
-        allCellGrids[22].classList.add("won");
-        allCellGrids[23].classList.add("won");
-        allCellGrids[24].classList.add("won");
-        winnerFunction (r5c1);
-    } else if (r1c1 && r1c1 === r2c1 && r1c1 === r3c1 && r1c1 === r4c1 && r1c1 === r5c1) {
-        allCellGrids[0].classList.add("won");
-        allCellGrids[5].classList.add("won");
-        allCellGrids[10].classList.add("won");
-        allCellGrids[15].classList.add("won");
-        allCellGrids[20].classList.add("won");
-        winnerFunction (r1c1);
-    } else if (r1c2 && r1c2 === r2c2 && r1c2 === r3c2 && r1c2 === r4c2 && r1c2 === r5c2) {
-        allCellGrids[1].classList.add("won");
-        allCellGrids[6].classList.add("won");
-        allCellGrids[11].classList.add("won");
-        allCellGrids[16].classList.add("won");
-        allCellGrids[21].classList.add("won");
-        winnerFunction (r1c2);
-    } else if (r1c3 && r1c3 === r2c3 && r1c3 === r3c3 && r1c3 === r4c3 && r1c3 === r5c3) {
-        allCellGrids[2].classList.add("won");
-        allCellGrids[7].classList.add("won");
-        allCellGrids[12].classList.add("won");
-        allCellGrids[17].classList.add("won");
-        allCellGrids[22].classList.add("won");
-        winnerFunction (r1c3);
-    } else if (r1c4 && r1c4 === r2c4 && r1c4 === r3c4 && r1c4 === r4c4 && r1c4 === r5c4) {
-        allCellGrids[3].classList.add("won");
-        allCellGrids[8].classList.add("won");
-        allCellGrids[13].classList.add("won");
-        allCellGrids[18].classList.add("won");
-        allCellGrids[23].classList.add("won");
-        winnerFunction (r1c4);
-    } else if (r1c5 && r1c5 === r2c5 && r1c5 === r3c5 && r1c5 === r4c5 && r1c5 === r5c5) {
-        allCellGrids[4].classList.add("won");
-        allCellGrids[9].classList.add("won");
-        allCellGrids[14].classList.add("won");
-        allCellGrids[19].classList.add("won");
-        allCellGrids[24].classList.add("won");
-        winnerFunction (r1c5);
-    } else if (r1c5 && r1c5 === r2c4 && r1c5 === r3c3 && r1c5 === r4c2 && r1c5 === r5c1) {
-        allCellGrids[4].classList.add("won");
-        allCellGrids[8].classList.add("won");
-        allCellGrids[12].classList.add("won");
-        allCellGrids[16].classList.add("won");
-        allCellGrids[20].classList.add("won");
-        winnerFunction (r1c5);
-    } else if (r1c1 && r1c1 === r2c2 && r1c1 === r3c3 && r1c1 === r4c4 && r1c1 === r5c5) {
-        allCellGrids[0].classList.add("won");
-        allCellGrids[6].classList.add("won");
-        allCellGrids[12].classList.add("won");
-        allCellGrids[18].classList.add("won");
-        allCellGrids[24].classList.add("won");
-        winnerFunction (r1c1);
-    } else if (r1c1 && r1c2 && r1c3 && r1c4 && r1c5 && r2c1 && r2c2 && r2c3 && r2c4 && r2c5 && r3c1 && r3c2 && r3c3 && r3c4 && r3c5 && r4c1 && r4c2 && r4c3 && r4c4 && r4c5 && r5c1 && r5c2 && r5c3 && r5c4 && r5c5) {
-        gameStatus = false;
-        console.log(winner);
-        gameStatusMessage.innerText = "Game is tied!"
-    }
-}
+  // console.log(allCellGrids[19]);
+  // console.log(r1c4, r2c4, r3c4, r4c4, r5c4);
+
+  // Winner statement function
+  const winnerFunction = (winner) => {
+    gameStatus = false;
+    console.log(winner);
+    gameStatusMessage.innerText = `${
+      winner.charAt(0).toUpperCase() + winner.slice(1)
+    } has won!!!`;
+  };
+  if (
+    r1c1 &&
+    r1c1 === r1c2 &&
+    r1c1 === r1c3 &&
+    r1c1 === r1c4 &&
+    r1c1 === r1c5
+  ) {
+    allCellGrids[0].classList.add('won');
+    allCellGrids[1].classList.add('won');
+    allCellGrids[2].classList.add('won');
+    allCellGrids[3].classList.add('won');
+    allCellGrids[4].classList.add('won');
+    winnerFunction(r1c1);
+  } else if (
+    r2c1 &&
+    r2c1 === r2c2 &&
+    r2c1 === r2c3 &&
+    r2c1 === r2c4 &&
+    r2c1 === r2c5
+  ) {
+    allCellGrids[5].classList.add('won');
+    allCellGrids[6].classList.add('won');
+    allCellGrids[7].classList.add('won');
+    allCellGrids[8].classList.add('won');
+    allCellGrids[9].classList.add('won');
+    winnerFunction(r2c1);
+  } else if (
+    r3c1 &&
+    r3c1 === r3c2 &&
+    r3c1 === r3c3 &&
+    r3c1 === r3c4 &&
+    r3c1 === r3c5
+  ) {
+    allCellGrids[10].classList.add('won');
+    allCellGrids[11].classList.add('won');
+    allCellGrids[12].classList.add('won');
+    allCellGrids[13].classList.add('won');
+    allCellGrids[14].classList.add('won');
+    winnerFunction(r3c1);
+  } else if (
+    r4c1 &&
+    r4c1 === r4c2 &&
+    r4c1 === r4c3 &&
+    r4c1 === r4c4 &&
+    r4c1 === r4c5
+  ) {
+    allCellGrids[15].classList.add('won');
+    allCellGrids[16].classList.add('won');
+    allCellGrids[17].classList.add('won');
+    allCellGrids[18].classList.add('won');
+    allCellGrids[19].classList.add('won');
+    winnerFunction(r4c1);
+  } else if (
+    r5c1 &&
+    r5c1 === r5c2 &&
+    r5c1 === r5c3 &&
+    r5c1 === r5c4 &&
+    r5c1 === r5c5
+  ) {
+    allCellGrids[20].classList.add('won');
+    allCellGrids[21].classList.add('won');
+    allCellGrids[22].classList.add('won');
+    allCellGrids[23].classList.add('won');
+    allCellGrids[24].classList.add('won');
+    winnerFunction(r5c1);
+  } else if (
+    r1c1 &&
+    r1c1 === r2c1 &&
+    r1c1 === r3c1 &&
+    r1c1 === r4c1 &&
+    r1c1 === r5c1
+  ) {
+    allCellGrids[0].classList.add('won');
+    allCellGrids[5].classList.add('won');
+    allCellGrids[10].classList.add('won');
+    allCellGrids[15].classList.add('won');
+    allCellGrids[20].classList.add('won');
+    winnerFunction(r1c1);
+  } else if (
+    r1c2 &&
+    r1c2 === r2c2 &&
+    r1c2 === r3c2 &&
+    r1c2 === r4c2 &&
+    r1c2 === r5c2
+  ) {
+    allCellGrids[1].classList.add('won');
+    allCellGrids[6].classList.add('won');
+    allCellGrids[11].classList.add('won');
+    allCellGrids[16].classList.add('won');
+    allCellGrids[21].classList.add('won');
+    winnerFunction(r1c2);
+  } else if (
+    r1c3 &&
+    r1c3 === r2c3 &&
+    r1c3 === r3c3 &&
+    r1c3 === r4c3 &&
+    r1c3 === r5c3
+  ) {
+    allCellGrids[2].classList.add('won');
+    allCellGrids[7].classList.add('won');
+    allCellGrids[12].classList.add('won');
+    allCellGrids[17].classList.add('won');
+    allCellGrids[22].classList.add('won');
+    winnerFunction(r1c3);
+  } else if (
+    r1c4 &&
+    r1c4 === r2c4 &&
+    r1c4 === r3c4 &&
+    r1c4 === r4c4 &&
+    r1c4 === r5c4
+  ) {
+    allCellGrids[3].classList.add('won');
+    allCellGrids[8].classList.add('won');
+    allCellGrids[13].classList.add('won');
+    allCellGrids[18].classList.add('won');
+    allCellGrids[23].classList.add('won');
+    winnerFunction(r1c4);
+  } else if (
+    r1c5 &&
+    r1c5 === r2c5 &&
+    r1c5 === r3c5 &&
+    r1c5 === r4c5 &&
+    r1c5 === r5c5
+  ) {
+    allCellGrids[4].classList.add('won');
+    allCellGrids[9].classList.add('won');
+    allCellGrids[14].classList.add('won');
+    allCellGrids[19].classList.add('won');
+    allCellGrids[24].classList.add('won');
+    winnerFunction(r1c5);
+  } else if (
+    r1c5 &&
+    r1c5 === r2c4 &&
+    r1c5 === r3c3 &&
+    r1c5 === r4c2 &&
+    r1c5 === r5c1
+  ) {
+    allCellGrids[4].classList.add('won');
+    allCellGrids[8].classList.add('won');
+    allCellGrids[12].classList.add('won');
+    allCellGrids[16].classList.add('won');
+    allCellGrids[20].classList.add('won');
+    winnerFunction(r1c5);
+  } else if (
+    r1c1 &&
+    r1c1 === r2c2 &&
+    r1c1 === r3c3 &&
+    r1c1 === r4c4 &&
+    r1c1 === r5c5
+  ) {
+    allCellGrids[0].classList.add('won');
+    allCellGrids[6].classList.add('won');
+    allCellGrids[12].classList.add('won');
+    allCellGrids[18].classList.add('won');
+    allCellGrids[24].classList.add('won');
+    winnerFunction(r1c1);
+  } else if (
+    r1c1 &&
+    r1c2 &&
+    r1c3 &&
+    r1c4 &&
+    r1c5 &&
+    r2c1 &&
+    r2c2 &&
+    r2c3 &&
+    r2c4 &&
+    r2c5 &&
+    r3c1 &&
+    r3c2 &&
+    r3c3 &&
+    r3c4 &&
+    r3c5 &&
+    r4c1 &&
+    r4c2 &&
+    r4c3 &&
+    r4c4 &&
+    r4c5 &&
+    r5c1 &&
+    r5c2 &&
+    r5c3 &&
+    r5c4 &&
+    r5c5
+  ) {
+    gameStatus = false;
+    console.log(winner);
+    gameStatusMessage.innerText = 'Game is tied!';
+  }
+};
 
 // Event listener
 for (const cellGrid of allCellGrids) {
-    cellGrid.addEventListener("click", mark);
+  cellGrid.addEventListener('click', mark);
 }
-resetButton.addEventListener("click", resetGame);
-modalCloseButton.addEventListener("click", closeModal);
+resetButton.addEventListener('click', resetGame);
+modalCloseButton.addEventListener('click', closeModal);
